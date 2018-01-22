@@ -34,7 +34,7 @@ float color_red(PCLCloudPtr cloud, int cloudSize)
         float counter_red=0;
         // for each point of the cloud check the color
         for (int i = 0; i < cloudSize; i++)
-        {   //conversion from RGB to HSV color space
+        {   //convert from RGB to HSV color space
             pcl::PointXYZRGBtoXYZHSV(cloud->points[i], hsv);
             //check whether the point has red color
             if(hsv.h>=320){
@@ -59,7 +59,7 @@ float color_green(PCLCloudPtr cloud, int cloudSize)
         float counter_green=0;
         // for each point of the cloud check the color
         for (int i = 0; i < cloudSize; i++)
-        {   //conversion from RGB to HSV color space
+        {   //convert from RGB to HSV color space
             pcl::PointXYZRGBtoXYZHSV(cloud->points[i], hsv);
             //check whether the point has green color
             if(hsv.h<=160 && hsv.h>=80){
@@ -82,7 +82,7 @@ float color_yellow(PCLCloudPtr cloud, int cloudSize)
     float counter_yellow=0;
     // for each point of the cloud check the color
     for (int i = 0; i < cloudSize; i++)
-    {   //conversion from RGB to HSV color space
+    {   //convert from RGB to HSV color space
         pcl::PointXYZRGBtoXYZHSV(cloud->points[i], hsv);
         //check whether the point has yellow color
         if(hsv.h<80 && hsv.h>=40){
@@ -103,7 +103,7 @@ float color_blue(PCLCloudPtr cloud, int cloudSize)
         float counter_blue=0;
         // for each point of the cloud check the color
         for (int i = 0; i < cloudSize; i++)
-        {   //conversion from RGB to HSV color space
+        {   //convert from RGB to HSV color space
             pcl::PointXYZRGBtoXYZHSV(cloud->points[i], hsv);
             //check whether the point has blue color
             if(hsv.h>160 && hsv.h<=280){
@@ -186,6 +186,8 @@ float color_pink(PCLCloudPtr cloud, int cloudSize)
        res.bluePercentage.data=counter_blue;
        res.greenPercentage.data=counter_green;
        res.redPercentage.data=counter_red;
+       res.pinkPercentage.data=counter_pink;
+       res.yellowPercentage.data=counter_yellow;
 
        return true;
    }
