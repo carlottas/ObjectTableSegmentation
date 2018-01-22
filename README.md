@@ -288,7 +288,7 @@ The service analyzes the HSV representation of the input points in order to dete
 In order to launch the service, the following line must be called in the .launch file: 
 
     node name=*nodeName" 		pkg="pitt_object_table_segmentation" 	type="color_services"  output="screen" 
-In order to correctly recognize the colors, the corresponging hue vaue must be tuned: 
+In order to correctly recognize the colors, the corresponging hue value must be tuned: 
 
 * Red : Line 40 and Line 43;
 
