@@ -288,7 +288,17 @@ The service analyzes the HSV representation of the input points in order to dete
 In order to launch the service, the following line must be called in the .launch file: 
 
     node name=*nodeName" 		pkg="pitt_object_table_segmentation" 	type="color_services"  output="screen" 
+In order to correctly recognize the colors, the corresponging hue vaue must be tuned: 
 
+* Red : Line 40 and Line 43;
+
+* Green : Line 65; 
+
+* Yellow: Line 88; 
+
+* Blue: Line 109; 
+
+* Pink: Line 129; 
 ## Msg
 ### input
 Type |Name| Description|
@@ -301,4 +311,6 @@ Type |Name| Description|
 std_msgs/Float32 |redPercentage	|Percentage of red point included in the input cloud. 
 std_msgs/Float32 | greenPercentage	| Percentage of green point included in the input cloud. 
 std_msgs/Float32 |bluePercentage	|Percentage of blue point included in the input cloud. 
+std_msgs/Float32 |pinkPercentage	|Percentage of pink point included in the input cloud. 
+std_msgs/Float32 |yellowPercentage	|Percentage of yellow point included in the input cloud. 
 std_msgs/String |Color	|Color of the point cloud.("red","blue","green","yellow","pink"). 
