@@ -121,7 +121,15 @@ Topic  |Msg | Description|
 
 
 # Arm_Filter_srv.cpp
-
+In order to launch the service, the following line must be called in the .launch file:
+	   
+    node name="arm_filter_srv" 				pkg="pitt_object_table_segmentation" 	type="arm_filter_srv" 				
+			args=	"$(arg pitt_arm_filter_show_cloud)
+					 $(arg pitt_arm_filter_camera_frame)
+					 $(arg pitt_arm_filter_left_forearm_frame)
+					 $(arg pitt_arm_filter_right_forearm_frame)
+					 $(arg pitt_arm_filter_left_elbow_frame)
+					 $(arg pitt_arm_filter_right_elbow_frame)"
 ## Main parameters  
 All the default values are defined in the "srv_manager.h" file .
 **Convention used** : 
@@ -165,7 +173,9 @@ float32[] |used_elbow_bounding_box_max_value|Returns back the value of the param
 
 
 # Cluster_srv.cpp
-
+In order to launch the service, the following line must be called in the .launch file: 
+	            
+    node name="cluster_segmentation_srv" 		pkg="pitt_object_table_segmentation" 	type="cluster_segmentation_srv"		/
 ## Ros parameter  
 All the default values and the ros name are defined in the cpp file itself .
 **Convention used** : 
@@ -212,6 +222,9 @@ Four different services are provided which perform the RANSAC algorithm in order
 * Cone 
 
 * Plane
+In order to launch the service, the following line must be called in the .launch file: 
+
+      node name="*primitiveName*_segmentation_srv" 		pkg="pitt_object_table_segmentation" 	type="plane_segmentation_srv"	 
 
 ## ROS parameters
 In each service the same parameters are needed.
